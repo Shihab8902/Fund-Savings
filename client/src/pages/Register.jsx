@@ -53,7 +53,7 @@ const Register = () => {
                     {errors?.password?.type == "minLength" && <span className=" text-xs font-medium text-red-500">Password must be at least 6 character</span>}
                 </div>
 
-                <input className="w-full mt-5 bg-green-600 hover:bg-green-700 rounded-md py-2 text-white cursor-pointer transition-all duration-300" type="submit" value="Login" />
+                <input className="w-full mt-5 font-medium bg-green-600 hover:bg-green-700 rounded-md py-2 text-white cursor-pointer transition-all duration-300" type="submit" value="Login" />
 
             </form>
 
