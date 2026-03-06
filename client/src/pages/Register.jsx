@@ -1,14 +1,26 @@
 import { FaDollarSign } from "react-icons/fa"
 import { useForm } from "react-hook-form"
 import { Link } from "react-router";
+import useAxios from "../hooks/useAxios";
 
 const Register = () => {
+
+    const axios = useAxios();
 
 
     const { register, formState: { errors }, handleSubmit } = useForm();
 
-    const onSubmit = (data) => console.log(data)
-
+    const onSubmit = (data) => {
+        if (data) {
+            axios.post("/api/user/register", data)
+                .then(res => {
+                    console.log(res);
+                })
+                .catch(error => {
+                    console.log(error)
+                })
+        }
+    }
 
 
     return <section className="container mx-auto p-5 min-h-screen w-full flex items-center justify-center">
